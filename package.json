@@ -1,0 +1,30 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "source": [
+    "src/pages/index.pug",
+    "src/pages/chat/index.pug",
+    "src/pages/error/index.pug",
+    "src/pages/profile/index.pug",
+    "src/pages/registration/index.pug"
+  ],
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel --no-source-maps --no-cache --port 3000 --open ",
+    "build": "parcel build --no-cache --no-source-maps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "2.1.1"
+  },
+  "engines": {
+    "node": "14.17.5"
+  },
+  "dependencies": {
+    "@parcel/transformer-pug": "^2.2.1",
+    "@parcel/transformer-sass": "^2.2.1"
+  }
+}

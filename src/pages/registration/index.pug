@@ -1,0 +1,44 @@
+//-шаблон
+extends ../../layout/main/main.pug
+//-компоненты
+include ../../components/button/button.pug
+
+block variables
+  - title = "Chat"
+  - description = "Учебный прект"
+  - favicon = "../../static/img/favicon.png"
+  - scripts = "index.js"
+  
+//-компоненты
+include ../../components/inpText/inpText.pug
+include ../../components/inpPassword/inpPassword.pug
+include ../../components/inpTel/inpTel.pug
+
+block content
+  .wrapper
+    form.form.form--profile(method="post" name="form" enctype="multipart/form-data" autocomplete="off" action="#")
+      h2.form__header Регистрация
+      .form__item
+        +inpText("Почта")
+
+      .form__item
+        +inpText("Логин")
+
+      .form__item
+        +inpText("Имя")
+
+      .form__item
+        +inpText("Фамилия")
+
+      .form__item
+        +inpTel("Телефон")
+
+      .form__item
+        +inpPassword("Пароль")
+
+      .form__button
+        +button('Регистрация')
+        
+      .form__footer
+        span Нет аккаунта
+      #root

@@ -1,0 +1,13 @@
+extends ../../layout/main/main.pug
+
+//-переменные
+block variables
+  - title = "Profile"
+  - description = "Учебный прект"
+  - favicon = "../../static/img/favicon.png"
+  - scripts = "index.js"
+
+block content
+  .wrapper
+    form.form.form--profile(method="post" name="form" enctype="multipart/form-data" autocomplete="off" action="#")
+      h2.form__header Профайл

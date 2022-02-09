@@ -1,0 +1,29 @@
+extends ../layout/main/main.pug
+
+//-переменные
+block variables
+  - title = "Welcome"
+  - description = "Учебный прект"
+  - favicon = "../static/img/favicon.png"
+  - scripts = "index.js"
+
+//-компоненты
+include ../components/button/button.pug
+include ../components/inpText/inpText.pug
+include ../components/inpPassword/inpPassword.pug
+
+block content
+  .wrapper
+    form.form(method="post" name="form" enctype="multipart/form-data" autocomplete="off" action="#")
+      h2.form__header Вход
+      .form__item
+        +inpText("Логин")
+
+      .form__item
+        +inpPassword("Пароль")
+
+      .form__button
+        +button("Войти")
+
+      .form__footer
+        span Нет аккаунта?
