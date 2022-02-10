@@ -7,6 +7,9 @@
 @mixin s8-h8 {
   @include typography_template(8px, 8px);
 }
+@mixin s9-h9 {
+  @include typography_template(9px, 9px);
+}
 
 @mixin s11-h11 {
   @include typography_template(11px, 11px);
@@ -26,4 +29,8 @@
 
 @mixin s14-h16 {
   @include typography_template(14px, 16px);
+}
+
+@mixin s20-h20 {
+  @include typography_template(20px, 20px);
 }

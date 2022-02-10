@@ -1,1 +1,1 @@
-import '../../assets/app.scss';
+import '../../assets/mixins/_mixins.scss';
