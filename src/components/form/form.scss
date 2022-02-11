@@ -1,0 +1,59 @@
+@import "../../assets/mixins/_mixins.scss";
+
+.form {
+  width: 100%;
+  max-width: 340px;
+  box-shadow: $shadow-basic;
+  border-radius: 12px;
+  padding: 30px;
+  &--profile {
+    max-width: 510px;
+    box-shadow:none;
+    border-radius: 0;
+  }
+}
+
+.form__avatar {
+}
+
+.form__header {
+  @include s20-h20;
+  text-align: center;
+  font-family: $fonts;
+  margin-bottom: 40px;
+}
+
+.form__item {
+  margin-bottom: 30px;
+}
+
+.form__button {
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.form__footer {
+  text-align: center;
+}
+
+.form__footer-link {
+  @include s11-h11;
+  color: $blue;
+}
+
+//для профайла
+.form__line {
+  display: block;
+  text-align: left;
+  color: $blue;
+  border-bottom: 1px solid $grey-400;
+  padding: 10px 0;
+  
+  &:hover {
+    font-family: $fontsBold;
+  }
+  &--exit {
+    color: $red;
+    border-bottom: 0;
+  }
+}

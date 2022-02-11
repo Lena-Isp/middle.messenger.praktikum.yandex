@@ -14,3 +14,12 @@ html(lang="ru")
   body
     main
       block content
+    
+    //-модальное окно(если есть переменная "modal", то подключается блок)  
+    if modal
+      .modal
+        .modal__wrap
+          .modal__content
+            block modal
+          .modal__close
+            span X

@@ -6,7 +6,7 @@ import '../../components/button';
 import '../../components/input';
 
 //функциии которые используются во всем проекте
-import {sum} from '../../utils/sum.js';
+/*import {sum} from '../../utils/sum.js';
 
 const root = document.querySelector('#root');
-root.textContent = sum(5, 9).toString();
+root.textContent = sum(5, 9).toString();*/

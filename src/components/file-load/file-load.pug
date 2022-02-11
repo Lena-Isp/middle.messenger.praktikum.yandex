@@ -1,0 +1,8 @@
+include ../button/button.pug
+
+mixin file-load(title)
+  form.file-load(method="post" enctype="multipart/form-data")
+    .file-load__item
+      label.file-load__name(for="avatar") Загрузите файл
+      input.file-load__enter(type="file" name="avatar" accept=".jpg, .jpeg, .png")
+    +button("поменять")

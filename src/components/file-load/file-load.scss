@@ -1,0 +1,17 @@
+@import "../../assets/mixins/_mixins.scss";
+
+.file-load {
+  text-align: center;
+}
+.file-load__name {
+  @include s14-h16;
+  display: block;
+  font-family: $fonts;
+  padding-bottom: 30px;
+  
+}
+.file-load__enter {
+  display: block;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}

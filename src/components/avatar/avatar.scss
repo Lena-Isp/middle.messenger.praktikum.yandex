@@ -1,0 +1,36 @@
+@import "../../assets/mixins/_mixins.scss";
+
+.avatar {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.avatar__circle {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-bottom: 20px;
+  &:hover {
+    .avatar__label {
+      background-color: rgba($black, .5);
+      opacity: 1;
+    }
+  }
+}
+
+.avatar__label {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .7s, opacity .7s;
+}
