@@ -5,10 +5,13 @@ block variables
   - favicon = "../../static/img/fav.png"
   - scripts = "index.js"
 
+include ../../components/messege/messege.pug
+
 block content
-  <main>
-    <h1>Репозиторий Chat, шаблон Pug</h1>
-    <h2>Ветка "main"</h2>
-    <p>Страница Chat</p>
-    <p>Тест: <span id="root"></span></p>
-  </main>
+  .chat
+    .chat__left
+    .chat__right
+      .chat__top
+      .chat__content в разработке
+      .chat__bottom 
+        +messege()
