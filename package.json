@@ -24,5 +24,7 @@
     "node": "14.17.5"
   },
   "dependencies": {
+    "@parcel/transformer-pug": "^2.2.1",
+    "@parcel/transformer-sass": "^2.2.1"
   }
 }
