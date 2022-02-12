@@ -11,8 +11,8 @@
   ],
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel --no-source-maps --no-cache --port 3000 --open ",
-    "build": "parcel build --no-cache"
+    "start": "parcel --no-cache --port 3000 --open",
+    "build": "parcel build --no-source-maps --no-cache"
   },
   "keywords": [],
   "author": "",
