@@ -2,5 +2,7 @@
 node_modules
 build
 dist
+.gitlab-ci.yml
+stats.json
 
 .DS_Store
