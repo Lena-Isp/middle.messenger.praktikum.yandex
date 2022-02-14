@@ -1,0 +1,43 @@
+@import "../../assets/mixins/_mixins.scss";
+
+.input-change {
+  position: relative;
+}
+
+.input-change__name {
+  @include s13-h13;
+  position: absolute;
+  bottom: 10px;
+  z-index: -1;
+}
+
+.input-change__enter {
+  @include s13-h13;
+  font-family: $fonts;
+	width: 100%;
+  border: none;
+	background: transparent;
+  border-bottom: 1px solid $grey-400;
+  opacity: 1;
+  font-family: $fonts;
+  outline: none;
+  padding: 20px 0 10px;
+  &:hover, 
+  &:focus,
+  &:active {
+    @include s13-h13;
+    outline: none;
+  }
+
+  &::placeholder {
+    font-family: $fonts;
+    text-align: right;
+  }
+}
+
+.input-change__error {
+  @include s8-h8;
+  color: $red;
+  position: absolute;
+  top: calc(100% + 3px);
+}

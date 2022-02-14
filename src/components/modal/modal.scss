@@ -1,0 +1,47 @@
+@import "../../assets/mixins/_mixins.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  opacity: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($black, .7);
+  visibility: hidden;
+  opacity: 0;
+  &--active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+  }
+}
+.modal__wrap {
+  width: 100%;
+  max-width: 360px;
+  position: relative;
+}
+.modal__content {
+  background-color: $white;
+  padding: 40px 30px;
+  margin: 10px;
+  border-radius: 12px;
+  box-shadow: $shadow-basic;
+
+}
+.modal__close {
+  @include s20-h20;
+  font-family: arial;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: inline-block;
+}

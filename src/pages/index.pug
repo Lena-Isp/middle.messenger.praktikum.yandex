@@ -1,0 +1,30 @@
+extends ../layout/main/main.pug
+
+//-переменные
+block variables
+  - title = "Welcome"
+  - description = "Учебный прект"
+  - favicon = "../static/img/fav.png"
+  - scripts = "index.js"
+
+//-компоненты
+include ../components/button/button.pug
+include ../components/input/input.pug
+
+block content
+  .wrapper
+    .form
+      form.form__block(method="post" name="formEnter" enctype="multipart/form-data" autocomplete="off" action="#")
+        h2.form__header Вход
+        //-Поля ввода
+        .form__item
+          +input("Логин")(name="login")
+
+        .form__item
+          +input("Пароль")(type="password" name="Password")
+
+        .form__button
+          +button("Войти")
+
+        .form__footer
+          a.form__footer-link(href="/registration") Регистрация

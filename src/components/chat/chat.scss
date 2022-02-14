@@ -1,0 +1,28 @@
+@import "../../assets/mixins/_mixins.scss";
+
+.chat {
+  display: flex;
+  min-height: 100vh;
+}
+.chat__left {
+  width: 310px;
+  background-color: $grey-100;
+  border-right: 1px solid $grey-400;
+}
+.chat__right {
+  padding: 0 20px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chat__top {
+  min-height: 40px;
+  border-bottom: 1px solid $grey-400;
+}
+
+.chat__bottom {
+  min-height: 40px;
+  border-top: 1px solid $grey-400;
+}

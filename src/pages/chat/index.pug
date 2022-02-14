@@ -1,0 +1,17 @@
+extends ../../layout/main/main.pug
+block variables
+  - title = "Chat"
+  - description = "Учебный прект"
+  - favicon = "../../static/img/fav.png"
+  - scripts = "index.js"
+
+include ../../components/messege/messege.pug
+
+block content
+  .chat
+    .chat__left
+    .chat__right
+      .chat__top
+      .chat__content в разработке
+      .chat__bottom 
+        +messege()

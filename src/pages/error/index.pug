@@ -1,0 +1,12 @@
+extends ../../layout/main/main.pug
+block variables
+  - title = "Error"
+  - favicon = "../../static/img/fav.png"
+  - scripts = "index.js"
+
+block content
+  .wrapper
+    .error
+      h1.error__header 404
+      p.error__text Не туда
+      a.error__link(href="/") Назад к чатам

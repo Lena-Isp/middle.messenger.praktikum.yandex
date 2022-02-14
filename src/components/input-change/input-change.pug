@@ -1,0 +1,5 @@
+mixin input-change(title, modifierClass="")
+  div(class="input-change " + modifierClass)
+    label.input-change__name= title
+    input.input-change__enter(type = attributes.type ? attributes.type : "text")&attributes(attributes)
+    .input-change__error 

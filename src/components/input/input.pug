@@ -1,0 +1,5 @@
+mixin input(title, modifierClass="")
+  div(class="input " + modifierClass)
+    label.input__name= title
+    input.input__enter(type = attributes.type ? attributes.type : "text")&attributes(attributes)
+    .input__error текст ошибки

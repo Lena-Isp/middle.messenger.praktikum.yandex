@@ -1,0 +1,49 @@
+extends ../../layout/main/main.pug
+
+//-переменные
+block variables
+  - title = "Profile"
+  - description = "Учебный прект"
+  - favicon = "../../static/img/fav.png"
+  - scripts = "./index.js"
+  //-подключение модального окна
+  - modal = true
+
+//-компоненты
+include ../../components/button/button.pug
+include ../../components/input-change/input-change.pug
+include ../../components/avatar/avatar.pug
+include ../../components/file-load/file-load.pug
+
+block content
+  .wrapper
+    .form.form--profile
+      form.form__block(method="post" name="formProfile" enctype="multipart/form-data" autocomplete="off" action="#")
+        +avatar("Иван")
+
+        //-Поля ввода
+        .form__item
+          +input-change("Почта")(type="email" placeholder="pochta@yandex.ru" name="email" disabled)
+          +input-change("Логин")(placeholder="ivanivanov" name="login" disabled)
+          +input-change("Имя")(placeholder="Иван" name="first_name" disabled)
+          +input-change("Фамилия")(placeholder="Иванов" name="second_name" disabled)
+          +input-change("Телефон")(type="tel" placeholder="+7 (909) 967 30 30" name="phone" disabled)
+
+           //-поля для ввода пароля 
+          +input-change("Старый пароль")(type="password" placeholder="•••••••" name="oldPassword" disabled)
+          +input-change("Новый пароль")(type="password" placeholder="•••••••" name="newPassword" disabled)
+          +input-change("Повторите новый пароль")(type="password" placeholder="•••••••" name="password" disabled)
+        
+        //-кнопка для отправки измененных данных
+        .form__button
+          +button('Сохранить')
+        
+        //-для изменения пароля
+        .form__footer
+          a.form__line(href="#") Изменить данные
+          a.form__line(href="#") Изменить пароль
+          a.form__line.form__line--exit(href="#") Выйти
+
+//- блок модального окна
+block modal
+  +file-load
