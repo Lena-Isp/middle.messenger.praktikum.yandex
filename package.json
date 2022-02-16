@@ -9,6 +9,7 @@
     "src/pages/profile/index.pug",
     "src/pages/registration/index.pug"
   ],
+  "main": "src/pages/index.js",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel --no-cache --port 3000 --open",

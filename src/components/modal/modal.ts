@@ -1,12 +1,16 @@
-const avatarCircle = document.querySelector(".avatar__circle")
-const modal = document.querySelector(".modal")
-const modalClose = document.querySelector(".modal__close")
+const avatarCircle: HTMLDivElement | null = document.querySelector(".avatar__circle")
+const modal: HTMLDivElement | null = document.querySelector(".modal")
+const modalClose: HTMLDivElement | null = document.querySelector(".modal__close")
 
-const modalOpened = (evt) => {
+if (!avatarCircle || !modal || !modalClose) {
+  throw new Error("нет полей");
+}
+
+const modalOpened = (evt:any):void => {
   evt.preventDefault
   modal.classList.add("modal--active")
 }
-const modalClosed = (evt) => {
+const modalClosed = (evt:any):void => {
   evt.preventDefault
   modal.classList.remove("modal--active")
 }

@@ -24,7 +24,7 @@
   border-radius: 30px;
   padding: 0 10px;
   line-height: 28px;
-  &:hover, 
+  &:hover,
   &:focus,
   &:active {
     outline: none;
@@ -52,7 +52,7 @@
     opacity: .9;
   }
   &--disabled {
-    opacity: .9;   
+    opacity: .9;
     background-color: $grey-300;
     cursor: default;
   }
