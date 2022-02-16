@@ -1,2 +1,3 @@
 import "./input.scss";
-import "./input.js";
+import "./input.ts";
+

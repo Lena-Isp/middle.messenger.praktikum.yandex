@@ -1,2 +1,2 @@
 import "./form.scss";
-import "./form.js";
+import "./form.ts";
