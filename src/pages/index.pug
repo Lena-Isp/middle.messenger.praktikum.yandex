@@ -5,7 +5,7 @@ block variables
   - title = "Welcome"
   - description = "Учебный прект"
   - favicon = "../static/img/fav.png"
-  - scripts = "index.ts"
+  - scripts = "main.ts"
 
 //-компоненты
 include ../components/button/button.pug
@@ -27,4 +27,4 @@ block content
           +button("Войти")
 
         .form__footer
-          a.form__footer-link(href="/registration") Регистрация
+          a.form__footer-link(href="/registration/index.pug") Регистрация

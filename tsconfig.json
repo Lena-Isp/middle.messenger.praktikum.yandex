@@ -1,7 +1,7 @@
 {
   "include": ["src/**/**/*", "src/**/*"],
   "compilerOptions": {
-    "strict": true, 
+    "strict": true,
   },
   "noImplicitAny": true,
   "noUnusedLocals": true,

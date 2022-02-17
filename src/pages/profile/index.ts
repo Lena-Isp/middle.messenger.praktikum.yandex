@@ -7,3 +7,4 @@ import '../../components/button';
 import '../../components/avatar';
 import '../../components/modal';
 import '../../components/file-load'
+import '../../components/form'

@@ -8,14 +8,14 @@ block variables
   - description = "Учебный проект"
   - favicon = "../../static/img/fav.png"
   - scripts = "index.ts"
-  
+
 //-компоненты
 include ../../components/button/button.pug
 include ../../components/input/input.pug
 
 block content
   .wrapper
-    .form.form--profile
+    .form
       form.form__block(method="post" name="form" enctype="multipart/form-data" autocomplete="off" action="#")
         h2.form__header Регистрация
         //-Поля ввода
@@ -39,6 +39,6 @@ block content
 
         .form__button
           +button('Регистрация')
-          
+
         .form__footer
-          a.form__footer-link(href="/") Войти
+          a.form__footer-link(href="/index.pug") Войти
