@@ -6,8 +6,8 @@
   "scripts": {
     "eslint": "eslint --ext .ts --ext .js src/",
     "stylelint": "stylelint",
-    "start": "parcel src/pages/index.pug src/pages/**/index.pug --port 3005 --no-cache",
-    "build": "parcel build src/pages/index.pug src/pages/**/index.pug --no-cache"
+    "start": "parcel src/pages/index.html src/pages/**/index.pug --port 3005 --no-cache",
+    "build": "parcel build src/pages/index.html src/pages/**/index.pug --no-cache"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "assets": "3.0.1",
     "clsx": "^1.1.1",
     "components": "0.1.0",
+    "input": "^1.0.1",
     "nanoid": "^3.3.1",
     "uuid": "^8.3.2"
   },

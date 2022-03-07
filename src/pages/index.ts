@@ -2,53 +2,31 @@
 //общие стили
 import '../assets/app.scss';
 
-//компоненты(берет стили и js из index.js)
-import '../components/input';
-import '../components/form';
-
-
-import Block from "../utils/block";
 import { render } from "../utils/renderDom";
+import { TemplateForm } from "../components/form";
+import { Button } from "../components/button";
+import { Input } from "../components/input";
 
-//класс компонента
-import {TestButton} from "../components/testButton";
-import template from "./profileTemplate.hbs";
-
-//создаем кнопку с нужными параметрами
-/*const testButton = new TestButton({
-  modifer: 'button--my-class',
-  child: 'войти',
-});*/
-
-//добавляем testButton в верстку
-//render(".form__button", testButton);
-
-
-
-class profileTemplate extends Block {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-
-    // В данном случае render возвращает строкой разметку из шаблонизатора
-    return this.compile(template, { ...this.props } );
-  }
-}
-
-const profile = new profileTemplate({
-  buttons: new TestButton({
-    modifer: 'button--my-class',
-    child: 'войтиxcvcx',
+//-страница login
+export const login = new TemplateForm({
+  header: "Вход",
+  inputLogin: new Input({
+    title: 'Логин',
+    type: 'text',
+    name: 'login',
   }),
-  buttons5: new TestButton({
-    modifer: 'button--my-class',
-    child: 'vv',
-  })
+  inputPassword: new Input({
+    title: 'Пароль',
+    type: 'password',
+    name: 'password',
+  }),
+  button: new Button({
+    text: 'войти',
+  }),
+  link: "/registration/index.html",
+  footerText: "регистрация"
 });
 
-
-render(".app", profile);
-
-
+document.addEventListener("DOMContentLoaded", () => {
+  render(".wrapper", login);
+});

@@ -126,10 +126,11 @@ class Block {
       },
 
       set(target, prop, value) {
+        const oldProps = {...target};
         target[prop] = value;
 
         // Запускаем обновление компоненты
-        self.eventBus().emit(Block.EVENTS.FLOW_CDU, {...target}, target);
+        self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldProps, target);
         return true;
       },
 
@@ -185,11 +186,11 @@ class Block {
     const fragment = this._createDocumentElement('template');
 
     Object.entries(this.children).forEach( ([key, child]) => {
-      const x = `<div data-id='${child._id}'></div>`
-      context[key] = x
+      context[key] = `<div data-id='${child._id}'></div>`
     });
 
     const htmlString = template(context);
+
     fragment.innerHTML = htmlString;
 
     Object.entries(this.children).forEach( ([key, child]) => {
