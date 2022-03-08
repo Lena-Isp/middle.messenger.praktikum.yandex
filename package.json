@@ -31,6 +31,7 @@
     "typescript": "4.5.5"
   },
   "dependencies": {
+    "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
     "assets": "3.0.1",
     "clsx": "^1.1.1",
     "components": "0.1.0",

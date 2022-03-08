@@ -21,7 +21,7 @@ export const login = new TemplateForm({
     name: 'password',
   }),
   button: new Button({
-    text: 'войти',
+    text: 'войти'
   }),
   link: "/registration/index.html",
   footerText: "регистрация"

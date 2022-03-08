@@ -1,15 +1,6 @@
 //общие стили
 import '../../assets/app.scss';
 
-//компоненты(берет стили и js из index.js)
-import '../../components/input-change';
-import '../../components/button';
-import '../../components/avatar';
-import '../../components/modal';
-import '../../components/file-load'
-import '../../components/form'
-
-
 // общие стили
 import '../../assets/app.scss';
 
@@ -18,11 +9,16 @@ import { render } from "../../utils/renderDom";
 import { Avatar } from "../../components/avatar";
 import { TemplateFormfg } from "../../components/form-profile";
 import { TemplateInputChange } from "../../components/input-change";
-import { Input } from "../../components/input";
+import { Modal } from "../../components/modal";
+import { fileLoad } from "../../components/file-load";
+
+
+
+//компоненты(берет стили и js из index.js)
+import '../../components/modal';
 
 export const registaration = new TemplateFormfg({
   avatar: new Avatar({
-    avatarSrc:"./static/img/avatar.svg",
     title: "Иван",
   }),
   inputMail: new TemplateInputChange({
@@ -60,9 +56,17 @@ export const registaration = new TemplateFormfg({
     type: "tel",
     placeholder: "•••••••",
     name: "oldPassword"
-  })
+  }),
 });
+
+export const modalFile = new Modal({
+  child: new fileLoad(),
+  events: {
+    click: () => {console.log("xcvx")}
+  }
+})
 
 document.addEventListener("DOMContentLoaded", () => {
   render(".wrapper", registaration);
+  render(".modal", modalFile);
 });
