@@ -4,6 +4,11 @@
   margin-bottom: 50px;
   text-align: center;
 }
+.avatar__img {
+  width: 130px;
+  height: 130px;
+  background-image: url(../../static/img/avatar.svg);
+}
 
 .avatar__circle {
   position: relative;

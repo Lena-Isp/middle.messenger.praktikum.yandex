@@ -1,0 +1,11 @@
+{
+  "include": ["src/**/**/*", "src/**/*"],
+  "compilerOptions": {
+    "strict": true,
+  },
+  "noImplicitAny": true,
+  "noUnusedLocals": true,
+  "noUnusedParameters": true,
+  "sourceMap": true,
+  "strictNullChecks": true
+}
