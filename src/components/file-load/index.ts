@@ -13,10 +13,12 @@ interface ButtonProps {
   }
 }
 
-export class fileLoad extends Block {
+export class FileLoad extends Block {
   constructor(props: Props) {
     const props = {
-      button: new Button()
+      button: new Button({
+
+      })
     }
     super({
       ...props,

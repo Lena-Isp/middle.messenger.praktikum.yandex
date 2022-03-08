@@ -10,12 +10,7 @@ import { Avatar } from "../../components/avatar";
 import { TemplateFormfg } from "../../components/form-profile";
 import { TemplateInputChange } from "../../components/input-change";
 import { Modal } from "../../components/modal";
-import { fileLoad } from "../../components/file-load";
-
-
-
-//компоненты(берет стили и js из index.js)
-import '../../components/modal';
+import { FileLoad } from "../../components/file-load";
 
 export const registaration = new TemplateFormfg({
   avatar: new Avatar({
@@ -60,10 +55,7 @@ export const registaration = new TemplateFormfg({
 });
 
 export const modalFile = new Modal({
-  child: new fileLoad(),
-  events: {
-    click: () => {console.log("xcvx")}
-  }
+  child: new FileLoad()
 })
 
 document.addEventListener("DOMContentLoaded", () => {

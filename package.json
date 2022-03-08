@@ -6,7 +6,7 @@
   "scripts": {
     "eslint": "eslint --ext .ts --ext .js src/",
     "stylelint": "stylelint",
-    "start": "parcel src/pages/index.html src/pages/**/index.pug --port 3000 --no-cache",
+    "start": "parcel src/pages/index.html src/pages/**/index.pug --port 3005 --no-cache",
     "build": "parcel build src/pages/index.html src/pages/**/index.pug --no-cache"
   },
   "repository": {
