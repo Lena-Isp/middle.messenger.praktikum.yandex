@@ -1,12 +1,14 @@
 import Block from "../../utils/block";
-import template from "./button.hbs";
+import template from "./dialog.hbs";
 
 interface Props {
-  text: string,
-  modifierClass?: string
+  name?: string,
+  lead?: string,
+  message?: string,
+  classActive?: string
 }
 
-export default class Button extends Block {
+export default class Dialog extends Block {
   constructor(props: Props) {
     super(props);
   }

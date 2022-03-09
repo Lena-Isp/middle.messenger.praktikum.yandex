@@ -1,14 +1,12 @@
-// У кнопки есть index.js, который экспортирует только нужное
-//общие стили
 import '../assets/app.scss';
 
 import { render } from "../utils/renderDom";
-import { TemplateForm } from "../components/form";
-import { Button } from "../components/button";
-import { Input } from "../components/input";
+import Form from "../components/form";
+import Button from "../components/button";
+import Input from "../components/input";
 
 //-страница login
-export const login = new TemplateForm({
+const formLogin = new Form({
   header: "Вход",
   inputLogin: new Input({
     title: 'Логин',
@@ -28,5 +26,5 @@ export const login = new TemplateForm({
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  render(".wrapper", login);
+  render(".wrapper", formLogin);
 });

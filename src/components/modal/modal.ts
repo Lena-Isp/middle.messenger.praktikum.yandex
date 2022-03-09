@@ -1,21 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const avatarCircle: HTMLDivElement | null = document.querySelector(".avatar__circle")
-  const modal: HTMLDivElement | null = document.querySelector(".modal")
-  const modalClose: HTMLDivElement | null = document.querySelector(".modal__close")
+import "./modal.scss";
 
-  if (!avatarCircle || !modal || !modalClose) {
-    throw new Error("нет полей");
-  }
+import Block from "../../utils/block";
+import template from "./modal.hbs";
 
-  const modalOpened = (evt:any):void => {
-    evt.preventDefault
-    modal.classList.add("modal--active")
-  }
-  const modalClosed = (evt:any):void => {
-    evt.preventDefault
-    modal.classList.remove("modal--active")
-  }
+interface Props {
+  child?: Block,
+}
 
-  avatarCircle.addEventListener("click", modalOpened)
-  modalClose.addEventListener("click", modalClosed)
-});
+export default class Modal extends Block {
+  constructor(props: Props) {
+    super(props);
+  }
+  render() {
+    return this.compile(template, { ...this.props });
+  }
+}

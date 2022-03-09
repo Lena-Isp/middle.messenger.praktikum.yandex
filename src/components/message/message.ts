@@ -1,17 +1,18 @@
 import Block from "../../utils/block";
-import template from "./button.hbs";
+import template from "./message.hbs";
 
 interface Props {
-  text: string,
-  modifierClass?: string
+  text?: string,
+  textNext?: string,
+  textSend?: string
 }
 
-export default class Button extends Block {
+export default class Message extends Block {
   constructor(props: Props) {
     super(props);
   }
 
-  render(): DocumentFragment {
+  render() {
     return this.compile(template, { ...this.props });
   }
 }

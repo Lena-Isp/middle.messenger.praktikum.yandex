@@ -1,2 +1,4 @@
 import "./chat.scss";
-import "./chat.ts";
+import Chat from './chat';
+
+export default Chat;

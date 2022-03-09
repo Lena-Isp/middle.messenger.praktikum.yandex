@@ -1,16 +1,27 @@
 @import "../../assets/mixins/_mixins.scss";
 
-.messege {
+.messege-input {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
 }
-.messege__input {
+.messege-input__file {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../static/img/clip.svg);
+  background-size: auto;
+  background-position: 50%;
+  cursor: pointer;
+  &:hover {
+    opacity: .8;
+  }
+}
+.messege-input__input {
   width: calc(100% - 105px);
 }
-.messege__enter {
+.messege-input__enter {
   display: block;
   font-family: $fonts;
 	width: calc(100% - 20px);
@@ -35,7 +46,7 @@
   }
 }
 
-.messege__button {
+.messege-input__button {
   @include s13-h13;
   display: block;
   outline: none;

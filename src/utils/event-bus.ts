@@ -1,9 +1,11 @@
-class EventBus {
-  constructor() {
-    this.listeners = {};
-  }
+export type Listener<T extends unknown[] = any[]> = (...args: T) => void;
 
-  on(event, callback) {
+
+export default class EventBus<E extends string = string, M extends { [K in E]: unknown[] } = Record<E, any[]>> {
+  private listeners: { [key in E]?: Listener<M[E]>[] } = {};
+
+
+  on(event: E, callback: Listener<M[E]>) {
     if (!this.listeners[event]) {
       this.listeners[event] = [];
     }
@@ -30,5 +32,3 @@ class EventBus {
     });
   }
 }
-
-export default EventBus;
