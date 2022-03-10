@@ -4,10 +4,10 @@ import '../../assets/app.scss';
 import { render } from "../../utils/renderDom";
 //компоненты
 import FormProfile from "../../components/form-profile";
-import Avatar from "../../components/avatar";
 import InputChange from "../../components/input-change";
-import Modal from "../../components/modal";
 import FileLoad from "../../components/file-load";
+import Avatar from "../../components/avatar";
+import Modal from "../../components/modal";
 
 const profile = new FormProfile({
   avatar: new Avatar({

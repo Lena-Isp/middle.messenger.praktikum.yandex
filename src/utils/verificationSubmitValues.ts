@@ -44,7 +44,7 @@ export const verificationSubmitValues = (form, page) => {
 }
 export const checkEqualityPasswords = (password, passwordRepeat) => {
   if (password && passwordRepeat) {
-    return password !== passwordRepeat ? 'Пароли не совпадают!' : 'Совпдают';
+    return password !== passwordRepeat ? 'Пароли не совпадают!' : '';
   }
 }
 
