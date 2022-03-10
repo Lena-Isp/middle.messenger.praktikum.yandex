@@ -19,7 +19,7 @@ npm start
 ```
 ### Команды для запуска приложения и сборки:
 
-npm run 
+npm run
   - start
   - build
 
@@ -30,10 +30,20 @@ npm run start
 Просмотр в браузере:
 ```sh
 http://localhost:3000
-``` 
+```
 
 ### Build
 
 ```
 npm run build
 ```
+
+## Cтраницы приложения
+https://elegant-goodall-273c81.netlify.app/ <br />
+https://elegant-goodall-273c81.netlify.app/registration <br />
+https://elegant-goodall-273c81.netlify.app/chat/ <br />
+https://elegant-goodall-273c81.netlify.app/profile <br />
+https://elegant-goodall-273c81.netlify.app/profile-change <br />
+https://elegant-goodall-273c81.netlify.app/password-change <br />
+https://elegant-goodall-273c81.netlify.app/password-change <br />
+https://elegant-goodall-273c81.netlify.app/error <br />
