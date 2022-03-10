@@ -1,0 +1,83 @@
+@import "../../assets/mixins/_mixins.scss";
+
+.messege-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.messege-input__file {
+  width: 32px;
+  height: 32px;
+  background-image: url(../../static/img/clip.svg);
+  background-size: auto;
+  background-position: 50%;
+  cursor: pointer;
+  &:hover {
+    opacity: .8;
+  }
+}
+.messege-input__input {
+  width: calc(100% - 105px);
+}
+.messege-input__enter {
+  display: block;
+  font-family: $fonts;
+	width: calc(100% - 20px);
+  border: none;
+	padding: 0;
+	background-color: $grey-200;
+  padding-bottom: 4px;
+  opacity: 1;
+  font-family: $fonts;
+  outline: none;
+  border-radius: 30px;
+  padding: 0 10px;
+  line-height: 28px;
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &::placeholder {
+    font-family: $fonts;
+  }
+}
+
+.messege-input__button {
+  @include s13-h13;
+  display: block;
+  outline: none;
+  border: 0;
+  border-radius: 50%;
+  color: $white;
+  background-color: $blue;
+  cursor: pointer;
+  transition: opacity .7s;
+  width: 28px;
+  height: 28px;
+  position: relative;
+  &:hover {
+    opacity: .9;
+  }
+  &--disabled {
+    opacity: .9;
+    background-color: $grey-300;
+    cursor: default;
+  }
+  &:after {
+    content: "";
+    background-image: url(../../static/img/arrow.svg);
+    width: 28px;
+    height: 28px;
+    background-size: auto;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+  }
+}

@@ -1,7 +1,11 @@
-export function render(query: string, block: Block) {
+export function render(query: string, component: Block) {
   const root = document.querySelector(query);
-  block.dispatchComponentDidMount();
-  // Можно завязаться на реализации вашего класса Block
+  if (!root) {
+    throw new Error('Root not found')
+  }
+
+  component.dispatchComponentDidMount();
+
   root.innerHTML = ""
-  root.append(block.getContent()!);
+  root.append(component.getContent()!);
 }

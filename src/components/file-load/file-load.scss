@@ -3,12 +3,16 @@
 .file-load {
   text-align: center;
 }
+.file-load__item {
+  margin-bottom: 30px;
+}
+
 .file-load__name {
   @include s14-h16;
   display: block;
   font-family: $fonts;
   padding-bottom: 30px;
-  
+
 }
 .file-load__enter {
   display: block;

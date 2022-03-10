@@ -1,13 +1,4 @@
 import "./modal.scss";
+import Modal from './modal';
 
-//общий файл
-import Block from "../../utils/block";
-
-//шаблон формы
-import template from "./modal.hbs";
-
-export class Modal extends Block {
-  render() {
-    return this.compile(template, { ...this.props });
-  }
-}
+export default Modal;
