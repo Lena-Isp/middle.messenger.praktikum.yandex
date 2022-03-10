@@ -1,5 +1,4 @@
-Не все успела сделать, не рассчитала время, но надо сдавать((
-https://github.com/Lena-Isp/middle.messenger.praktikum.yandex/pull/2
+https://github.com/Lena-Isp/middle.messenger.praktikum.yandex/pull/3
 
 # Личный проект «Чат»
 * Студент: [Елена Исправникова](https://github.com/Lena-Isp)
