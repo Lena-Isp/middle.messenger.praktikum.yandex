@@ -48,11 +48,11 @@ const profile = new FormProfile({
     type: "tel",
     placeholder: "•••••••",
     name: "oldPassword"
-  }),
+  })
 });
 
 const modal = new Modal({
-  child: new FileLoad()
+  child: new FileLoad({})
 })
 
 document.addEventListener("DOMContentLoaded", () => {

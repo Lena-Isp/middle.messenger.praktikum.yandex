@@ -18,6 +18,9 @@ export default class Input extends Block {
       input: (evt: Event) => {
         this.checkInput(evt, this.props.type);
       },
+      blur: (evt: Event) => {
+        this.checkInput(evt, this.props.type);
+      },
       focus: (evt: Event) => {
         this.clearErrors(evt);
       },

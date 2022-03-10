@@ -26,5 +26,5 @@ const formLogin = new Form({
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  render(".wrapper", formLogin);
+  render(".wrapper--index", formLogin);
 });
