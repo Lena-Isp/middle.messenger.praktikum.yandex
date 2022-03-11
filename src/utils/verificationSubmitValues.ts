@@ -27,8 +27,8 @@ export const verificationSubmitValues = (form, page) => {
     case 'home':
       break;
     case 'pagePasswordChange':
-      const error = checkEqualityPasswords(values.password, values.passwordRepeat);
-      return { ...resultValid, passwordRepeat: { value: '', messageError: error } }
+      const error = checkEqualityPasswords(values.newPassword, values.repeatPassword);
+      return { passwordRepeat: { value: values.newPassword + "," + values.repeatPassword, messageError: error } }
       break;
     case 'profileSetting':
       return { ...values }
@@ -48,7 +48,7 @@ export const checkEqualityPasswords = (password, passwordRepeat) => {
   }
 }
 
-const validValuesInput = (values) => {
+const validValuesInput = (values: string) => {
   let result = {};
   Object.keys(values).forEach(key => {
     result[key] = validation(values[key], key)

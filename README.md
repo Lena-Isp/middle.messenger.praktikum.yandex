@@ -31,7 +31,7 @@ npm start
 ```
 ### Команды для запуска приложения и сборки:
 
-npm run 
+npm run
   - start
   - build
 
@@ -42,7 +42,7 @@ npm run start
 Просмотр в браузере:
 ```sh
 http://localhost:3000
-``` 
+```
 
 ### Build
 

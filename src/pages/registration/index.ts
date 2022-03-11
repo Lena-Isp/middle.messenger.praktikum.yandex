@@ -1,13 +1,12 @@
-// общие стили
+//стили
 import '../../assets/app.scss';
-
 import { render } from "../../utils/renderDom";
-//компоненты
-import { TemplateForm } from "../../components/form";
-import { Button } from "../../components/button";
-import { Input } from "../../components/input";
 
-export const registaration = new TemplateForm({
+import Form from "../../components/form";
+import Button from "../../components/button";
+import Input from "../../components/input";
+
+const registarationForm = new Form({
   header: "Регистрация",
   inputMail: new Input({
     title: 'Почта',
@@ -47,5 +46,5 @@ export const registaration = new TemplateForm({
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  render(".wrapper", registaration);
+  render(".wrapper", registarationForm);
 });

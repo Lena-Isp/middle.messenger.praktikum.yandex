@@ -18,7 +18,7 @@ export const validation = (value: string, type: string): Record<string, string> 
 const passwordVerification = (value) => {
   const pattern = /(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z]).{8,}/g;
   const result = value.match(pattern);
-  const error = result ? '' : 'Пароль не содержит заглавных букв';
+  const error = result ? '' : 'Пароль должен содержать заглавные буквы и цифры';
   return {value: value, messageError: error};
 };
 

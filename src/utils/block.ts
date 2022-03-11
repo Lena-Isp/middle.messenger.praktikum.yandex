@@ -8,28 +8,28 @@ class Block {
     FLOW_CDM: "flow:component-did-mount",
     FLOW_CDU: "flow:component-did-update",
     FLOW_RENDER: "flow:render"
-  };
+  } as const;
 
-  _element = null;
-  _meta = null;
+  private _id = makeUUID();
+  private _element: HTMLElement | null = null;
+  private _meta: { props: any };
+
+  protected props: any;
+  protected children: Record<string, Block>;
+  private eventBus: () => EventBus
 
   constructor(propsAndChildrens: any = {}) {
     const eventBus = new EventBus();
-
     const { props, children } = this._getPropsAndChildren(propsAndChildrens);
-    this.children = children;
 
+    this.children = children;
     this._meta  = {
       props
     };
 
-    // Генерируем уникальный UUID V4
     this._id = makeUUID();
-
     this.props = this._makePropsProxy({...props, __id: this._id});
-
     this.eventBus = () => eventBus;
-
     this._registerEvents(eventBus);
     eventBus.emit(Block.EVENTS.INIT);
   }
@@ -48,13 +48,12 @@ class Block {
     return { props, children };
   }
 
-  _registerEvents(eventBus) {
+  _registerEvents(eventBus: EventBus) {
     eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
-
 
   init() {
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
@@ -64,12 +63,15 @@ class Block {
     this.componentDidMount();
   }
 
-  componentDidMount(oldProps) {}
-    dispatchComponentDidMount() {
-      this.eventBus().emit(Block.EVENTS.FLOW_CDM);
-    }
+  componentDidMount() {
 
-  _componentDidUpdate(oldProps, newProps) {
+  }
+
+  dispatchComponentDidMount() {
+    this.eventBus().emit(Block.EVENTS.FLOW_CDM);
+  }
+
+  _componentDidUpdate(oldProps: any, newProps: any) {
     const response = this.componentDidUpdate(oldProps, newProps);
     if (!response) {
       return;
@@ -77,11 +79,11 @@ class Block {
     this._render();
   }
 
-  componentDidUpdate(oldProps, newProps) {
+  componentDidUpdate(oldProps: any, newProps: any) {
     return true;
   }
 
-  setProps = nextProps => {
+  setProps = (nextProps: any) => {
     if (!nextProps) {
       return;
     }
@@ -89,13 +91,13 @@ class Block {
     Object.assign(this.props, nextProps);
   };
 
-  get element() {
+  get element(): HTMLElement | null   {
     return this._element;
   }
 
   _render() {
     const fragment = this.render();
-    const newElement = fragment.firstElementChild
+    const newElement = fragment.firstElementChild as HTMLElement;
     if(this._element) {
       this._removeEvents()
       this._element.replaceWith(newElement)
@@ -105,16 +107,15 @@ class Block {
     this._addEvents();
   }
 
-    // Переопределяется пользователем. Необходимо вернуть разметку
   render(): DocumentFragment {
     return new DocumentFragment;
   }
 
-  getContent() {
+  getContent(): HTMLElement | null  {
     return this.element;
   }
 
-  _makePropsProxy(props) {
+  _makePropsProxy(props: any): any {
     // Можно и так передать this
     // Такой способ больше не применяется с приходом ES6+
     const self = this;
@@ -140,7 +141,7 @@ class Block {
     });
   }
 
-  _createDocumentElement(tagName) {
+  _createDocumentElement(tagName: any) {
     const element = document.createElement(tagName);
     //element.setAttribute('data-id', this._id);
     // Можно сделать метод, который через фрагменты в цикле создаёт сразу несколько блоков
@@ -148,7 +149,7 @@ class Block {
   }
 
   _removeEvents() {
-    const {events = {}} = this.props;
+    const {events = {}} = this.props as any;
 
     if (!events || !this._element) {
       return;
@@ -160,29 +161,14 @@ class Block {
   }
 
   _addEvents() {
-    const {events = {}} = this.props;
+    const {events = {}} = this.props as any;
 
     Object.keys(events).forEach(eventName => {
       this._element.addEventListener(eventName, events[eventName]);
     });
   }
 
-  /*_getChildren(propsAndChildren) {
-    const children = {};
-    const props = {};
-    Object.entries(propsAndChildren).forEach(([key, value]) => {
-      if (value instanceof Block) {
-        children[key] = value;
-      } else {
-        props[key] = value;
-      }
-    });
-    return { children, props };
-  }*/
-
-
-
-  compile(template: any, context: any) {
+  compile(template: (context: any) => string, context: any) {
     const fragment = this._createDocumentElement('template');
 
     Object.entries(this.children).forEach( ([key, child]) => {

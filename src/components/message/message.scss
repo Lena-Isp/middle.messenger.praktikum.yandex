@@ -1,0 +1,32 @@
+@import "../../assets/mixins/_mixins.scss";
+
+.message__item {
+  &--send {
+    text-align: right;
+    .message__text {
+      text-align: left;
+      min-width: 100px;
+      background-color: $blue-light;
+      padding: 10px 20px;
+      margin-left: auto;
+    }
+  }
+}
+.message__text {
+  position: relative;
+  background-color: $grey-500;
+  max-width: 400px;
+  border-radius: 14px;
+  display: inline-block;
+  width: auto;
+  min-width: 100px;
+  padding: 10px 20px;
+}
+
+.message__time {
+  @include s13-h13;
+  color: $grey-300;
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+}
