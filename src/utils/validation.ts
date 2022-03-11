@@ -10,6 +10,8 @@ export const validation = (value: string, type: string): Record<string, string> 
           return emailVerification(value);
       case 'tel':
           return telVerification(value);
+      case 'number':
+          return numbVerification(value);
       default:
           return {value: '', messageError: ''};
   }
@@ -38,5 +40,10 @@ const telVerification = (value) => {
   const pattern = /(?=.*[0-9]){5,}/g;
   const result = value.match(pattern);
   const error = result ? '' : 'Неверный телефон!';
+  return {value: value, messageError: error};
+};
+
+const numbVerification = (value) => {
+  const error = value.length < 10 ? 'Не менее 10 символов!' : '';
   return {value: value, messageError: error};
 };
