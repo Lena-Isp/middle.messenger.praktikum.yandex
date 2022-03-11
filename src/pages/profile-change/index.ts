@@ -31,7 +31,7 @@ const profileChange = new ProfileChange({
   }),
   inputTel: new Input({
     title: "Телефон",
-    type: "tel",
+    type: "number",
     name: "phone"
   }),
   button: new Button({
