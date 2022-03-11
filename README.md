@@ -1,4 +1,4 @@
-https://github.com/Lena-Isp/middle.messenger.praktikum.yandex/pull/5
+https://github.com/Lena-Isp/middle.messenger.praktikum.yandex/pull/6
 
 ## Cтраницы приложения
 https://elegant-goodall-273c81.netlify.app/ <br />
