@@ -10,7 +10,7 @@ const registarationForm = new Form({
   header: "Регистрация",
   inputMail: new Input({
     title: 'Почта',
-    type: 'text',
+    type: 'email',
     name: 'mail',
   }),
   inputLogin: new Input({
@@ -30,8 +30,8 @@ const registarationForm = new Form({
   }),
   inputPhone: new Input({
     title: 'Телефон',
-    type: 'tel',
-    name: 'Tel',
+    type: 'number',
+    name: 'phone',
   }),
   inputPassword: new Input({
     title: 'Пароль',
